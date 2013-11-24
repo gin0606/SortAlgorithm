@@ -20,6 +20,27 @@
       return _nums;
     };
 
+    SortAlgorithm.prototype.quickSort = function(nums) {
+      var i, left, pi, right, _i, _len, _nums, _ref;
+      _nums = nums.slice(0);
+      if (_nums.length < 1) {
+        return _nums;
+      }
+      pi = _nums[0];
+      left = [];
+      right = [];
+      _ref = _nums.slice(1);
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        i = _ref[_i];
+        if (i < pi) {
+          left.push(i);
+        } else {
+          right.push(i);
+        }
+      }
+      return this.quickSort(left).concat([pi]).concat(this.quickSort(right));
+    };
+
     return SortAlgorithm;
 
   })();
@@ -36,5 +57,7 @@
   })();
 
   console.log(sort.bubbleSort(nums));
+
+  console.log(sort.quickSort(nums));
 
 }).call(this);
