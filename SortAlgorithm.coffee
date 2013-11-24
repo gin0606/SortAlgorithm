@@ -4,9 +4,7 @@ class SortAlgorithm
     for i in [0.._nums.length]
       for j in [i + 1.._nums.length]
         if _nums[i] > _nums[j]
-          tmp = _nums[i];
-          _nums[i] = _nums[j]
-          _nums[j] = tmp
+          [_nums[i], _nums[j]] = [_nums[j], _nums[i]]
     _nums
 
   quickSort: (nums) ->

@@ -6,14 +6,12 @@
     function SortAlgorithm() {}
 
     SortAlgorithm.prototype.bubbleSort = function(nums) {
-      var i, j, tmp, _i, _j, _nums, _ref, _ref1, _ref2;
+      var i, j, _i, _j, _nums, _ref, _ref1, _ref2, _ref3;
       _nums = nums.slice(0);
       for (i = _i = 0, _ref = _nums.length; 0 <= _ref ? _i <= _ref : _i >= _ref; i = 0 <= _ref ? ++_i : --_i) {
         for (j = _j = _ref1 = i + 1, _ref2 = _nums.length; _ref1 <= _ref2 ? _j <= _ref2 : _j >= _ref2; j = _ref1 <= _ref2 ? ++_j : --_j) {
           if (_nums[i] > _nums[j]) {
-            tmp = _nums[i];
-            _nums[i] = _nums[j];
-            _nums[j] = tmp;
+            _ref3 = [_nums[j], _nums[i]], _nums[i] = _ref3[0], _nums[j] = _ref3[1];
           }
         }
       }
